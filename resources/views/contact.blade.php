@@ -9,6 +9,8 @@
 </head>
 <body>
     <h1>Contact</h1>
+
+    <h3>{{ $name }}</h3>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint consequuntur tempora blanditiis eligendi explicabo nam quidem provident assumenda mollitia repellendus, error reprehenderit, obcaecati dignissimos repudiandae voluptatem, quos a sequi earum.</p>
 </body>
 </html>
