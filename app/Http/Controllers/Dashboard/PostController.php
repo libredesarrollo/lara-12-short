@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -21,16 +22,19 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        Category::create(
+            [
+                'title' => 'titulo',
+                'slug' => 'titulo'
+            ]
+        );
+        echo 'Hola Mundo';
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        
-    }
+    public function store(Request $request) {}
 
     /**
      * Display the specified resource.

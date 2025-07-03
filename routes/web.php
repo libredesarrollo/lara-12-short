@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,5 +16,9 @@ Route::get('/contact/{name?}', function (?string $name = null) {
     $dbdata = ['asas'];
     $dbdata2 = ['asas'];
     // return view('contact',['name' => $name ?? 'hola', 'dbdata' => $dbdata,, 'dbdata2' => $dbdata2]);
-    return view('contact',compact('name', 'dbdata','dbdata2'));
-});
+    return view('contact', compact('name', 'dbdata', 'dbdata2'));
+})->name('w.list.post');
+
+// Route::post('test/post',[PostController::class, 'create']);
+
+Route::resource('post', PostController::class);
