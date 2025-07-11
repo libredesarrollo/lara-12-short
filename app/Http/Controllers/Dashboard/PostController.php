@@ -22,12 +22,25 @@ class PostController extends Controller
      */
     public function create()
     {
-        Category::create(
-            [
-                'title' => 'titulo',
-                'slug' => 'titulo'
-            ]
-        );
+        // Crear
+        // Category::create(
+        //     [
+        //         'title' => 'titulo',
+        //         'slug' => 'titulo'
+        //     ]
+        // );
+        // ver
+        $category = Category::find(1);
+
+        // update
+        // $category->update(
+        //     [
+        //         'title' => 'titulo new',
+        //         'slug' => 'titulo new'
+        //     ]
+        // );
+         dd($category);
+        
         echo 'Hola Mundo';
     }
 
