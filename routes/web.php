@@ -1,11 +1,18 @@
 <?php
 
+use App\Http\Controllers\Dashboard\ChatGTPController;
 use App\Http\Controllers\Dashboard\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+
+
+
     return view('welcome');
 });
+
+
+
 // Route::get('/contact', function () {
 //     return view('contact',['name' => 'Andres']);
 // });
@@ -19,6 +26,23 @@ Route::get('/contact/{name?}', function (?string $name = null) {
     return view('contact', compact('name', 'dbdata', 'dbdata2'));
 })->name('w.list.post');
 
+
+
 // Route::post('test/post',[PostController::class, 'create']);
 
 Route::resource('post', PostController::class);
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('chatgtp', [ChatGTPController::class, 'textarea']);
+Route::post('chatgtp/ask1', [ChatGTPController::class, 'ask'])->name('gtp-1');

@@ -25,12 +25,13 @@ class PostController extends Controller
         // Crear
         // Category::create(
         //     [
-        //         'title' => 'titulo',
-        //         'slug' => 'titulo'
+        //         'title' => 'titulo 3',
+        //         'slug' => 'titulo 3'
         //     ]
         // );
         // ver
-        $category = Category::find(1);
+        // $category = Category::find(1);
+        $category = Category::get();
 
         // update
         // $category->update(
@@ -39,6 +40,7 @@ class PostController extends Controller
         //         'slug' => 'titulo new'
         //     ]
         // );
+        // $category->delete();
          dd($category);
         
         echo 'Hola Mundo';
