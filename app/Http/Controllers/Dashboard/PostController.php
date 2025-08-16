@@ -22,6 +22,10 @@ class PostController extends Controller
      */
     public function create()
     {
+        $categories = Category::pluck('title','id');
+        //  $categories = Category::get();
+        // dd($categories);
+        return view('dashboard.post.create', compact('categories'));
         // Crear
         // Category::create(
         //     [
@@ -31,7 +35,7 @@ class PostController extends Controller
         // );
         // ver
         // $category = Category::find(1);
-        $category = Category::get();
+        // $category = Category::get();
 
         // update
         // $category->update(
@@ -41,7 +45,23 @@ class PostController extends Controller
         //     ]
         // );
         // $category->delete();
-         dd($category);
+        //  dd($category);
+
+
+        // crear Post
+        // Post::create(
+        //     ['title' => "test",
+        //      'slug' => "test",
+        //      'content' => "test",
+        //      'category_id' => 3,
+        //      'description' => "test",
+        //      'posted' => "not",
+        //      'image' => "test"]
+        // );
+
+        // obtener post
+        //::with('category')
+        dd(Post::find(1)->category);
         
         echo 'Hola Mundo';
     }
